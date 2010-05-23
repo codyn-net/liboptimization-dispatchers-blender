@@ -82,6 +82,8 @@ Dispatcher::OnBlenderKilled(GPid pid, int ret)
 	task::Response response;
 
 	response.set_status(task::Response::Success);
+	response.set_id(Task().id());
+
 	task::Response::Fitness *fitness = response.add_fitness();
 	fitness->set_name("value");
 	fitness->set_value(1);
