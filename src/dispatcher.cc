@@ -219,9 +219,6 @@ Dispatcher::RunTask()
 		return false;
 	}
 
-	gint sin;
-	gint serr;
-
 	try
 	{
 		Glib::spawn_async_with_pipes(WorkingDirectory(),
@@ -230,19 +227,13 @@ Dispatcher::RunTask()
 		                             Glib::SPAWN_DO_NOT_REAP_CHILD |
 		                             Glib::SPAWN_STDOUT_TO_DEV_NULL,
 		                             sigc::slot<void>(),
-		                             &d_pid,
-		                             &sin,
-		                             0,
-		                             &serr);
+		                             &d_pid);
 	}
 	catch (Glib::SpawnError &e)
 	{
 		cerr << "Error while spawning blender: " << e.what() << endl;
 		return false;
 	}
-
-	close(sin);
-	close(serr);
 
 	Glib::signal_child_watch().connect(sigc::mem_fun(*this, &Dispatcher::OnBlenderKilled), d_pid);
 
