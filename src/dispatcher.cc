@@ -156,23 +156,16 @@ Dispatcher::SetupArguments(vector<string> &argv)
 		return false;
 	}
 
-	size_t frame = static_cast<size_t>(parameter.value());
-	argv.push_back("-f");
-
-	stringstream s;
-	s << frame;
-	argv.push_back(s.str());
-
 	string outputpath;
 	argv.push_back("-o");
 
 	if (Setting("output-path", outputpath))
 	{
-		argv.push_back(outputpath + "/frame#");
+		argv.push_back(outputpath + "/frame#####");
 	}
 	else
 	{
-		argv.push_back("//frame#");
+		argv.push_back("//frame#####");
 	}
 
 	string format;
@@ -189,6 +182,14 @@ Dispatcher::SetupArguments(vector<string> &argv)
 
 	argv.push_back("-x");
 	argv.push_back("1");
+
+	size_t frame = static_cast<size_t>(parameter.value());
+	argv.push_back("-f");
+
+	stringstream s;
+	s << frame;
+	argv.push_back(s.str());
+
 
 	// Append additional arguments
 	string args;
