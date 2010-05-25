@@ -155,6 +155,9 @@ Dispatcher::SetupArguments(vector<string> &argv)
 		argv.push_back(scene);
 	}
 
+	argv.push_back("-t");
+	argv.push_back("1");
+
 	// Append frame number
 	task::Task::Parameter parameter;
 	if (!Parameter("frame", parameter))
