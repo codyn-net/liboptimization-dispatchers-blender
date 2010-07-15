@@ -1,4 +1,4 @@
-AC_INIT(liboptimization-dispatchers-blender, 2.1)
+AC_INIT(liboptimization-dispatchers-blender, 2.2)
 
 AM_INIT_AUTOMAKE(AC_PACKAGE_NAME, AC_PACKAGE_VERSION)
 
