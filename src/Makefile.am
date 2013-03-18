@@ -18,6 +18,7 @@ blender_SOURCES = \
 	dispatcher.cc \
 	config.cc
 
+blender_CXXFLAGS = "-Wl,--no-as-needed"
 blender_LDFLAGS = $(PACKAGE_DISPATCHERS_LIBS)
 
 NO_INST_HFILES = \
