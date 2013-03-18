@@ -1,3 +1,9 @@
+liboptimization2-dispatchers-blender (2.3-1) UNRELEASED; urgency=low
+
+  * New upstream release
+
+ -- Jesse van den Kieboom <jesse.vandenkieboom@epfl.ch>  Mon, 18 Mar 2013 10:11:29 +0100
+
 liboptimization2-dispatchers-blender (2.2-1) UNRELEASED; urgency=low
 
   * New upstream release
